@@ -40,9 +40,8 @@ body {
 
 header {
 	background: cyan;
-	min-height: 30vh;
+	min-height: 40vh;
 	transition: var(--background-transition);
-	margin-bottom: 2rem;
 }
 h1 {
 	font-weight: 200;
@@ -50,7 +49,6 @@ h1 {
 	font-size: 9rem;
 	padding: 1rem 2rem;
 }
-
 .menuBar {
 	position: sticky;
 	top: 40vh;
@@ -63,7 +61,7 @@ nav ul {
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
-	background: cyan;
+	background: blue;
 }
 .menuBar li {
 	flex: 1 0 auto;
