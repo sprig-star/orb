@@ -32,13 +32,17 @@ html {
 body {
 	color: #fff;
 	margin: 0;
-	background: linear-gradient(#effa, #444e 100vh, #111 200vh), linear-gradient(90deg, aqua, yellow);
+	background: radial-gradient(at 40% 20%, #7444, #9af0), linear-gradient(#effa, #444e 100vh, #111 200vh), linear-gradient(90deg, aqua, yellow);
+	animation: Mush 20s alternate infinite;
 	min-height: 200vh;
+	--background-transition: background-color 400ms cubic-bezier(.69,.14,.12,.99);
 }
 
 header {
 	background: cyan;
-	min-height: calc(40vh + 2em);
+	min-height: 30vh;
+	transition: var(--background-transition);
+	margin-bottom: 2rem;
 }
 h1 {
 	font-weight: 200;
@@ -48,9 +52,10 @@ h1 {
 }
 
 .menuBar {
-	position: fixed;
-	width: 100%;
+	position: sticky;
 	top: 40vh;
+	width: 100%;
+	font-size: 1.2rem;
 }
 nav ul {
 	font-stretch: condensed;
@@ -59,17 +64,47 @@ nav ul {
 	justify-content: space-around;
 	align-items: center;
 	background: cyan;
+}
+.menuBar li {
+	flex: 1 0 auto;
+	text-align: center;
+}
+.menuBar a {
 	min-height: 2em;
-	padding-bottom: .2em;
+	width: 100%;
+	display: block;
+	padding: .5em .2em;
 }
 .menuBar ul {
 	clip-path: inset(78% 0 0 0);
-	transition: clip-path 400ms cubic-bezier(.69,.14,.12,.99);
+	transition: clip-path 400ms cubic-bezier(.69,.14,.12,.99), var(--background-transition);
 }
 .menuBar:hover ul, .menuBar:focus-within ul, .keepOpen ul {
 	clip-path: inset(0 0 0 0);
 }
+.instant ul {
+	transition-duration: 0ms;
+}
 
 main {
 	padding: 2rem;
+}
+
+.cs-maroon {
+	background-color: maroon;
+}
+.cs-purple {
+	background-color: purple;
+}
+.cs-orange {
+	background-color: orange;
+}
+.cs-green {
+	background-color: green;
+}
+.cs-aliceblue {
+	background-color: aliceblue;
+}
+.cs-silver {
+	background-color: silver;
 }
