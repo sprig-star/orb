@@ -1,0 +1,75 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}a{color:inherit;text-decoration:none;}ul{list-style:none}button,input,select{margin:0}address{font-style:normal}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+@font-face {
+	font-family: 'Halibut';
+	src: url('fonts/HalibutSerif-regular.woff');
+	font-weight: normal;
+	font-stretch: normal;
+}
+@font-face {
+	font-family: 'Halibut';
+	src: url('fonts/HalibutSerif-CondensedThin.woff');
+	font-weight: 200;
+	font-stretch: condensed;
+}
+@font-face {
+	font-family: 'Halibut';
+	src: url('fonts/HalibutSerif-Condensed.woff');
+	font-weight: normal;
+	font-stretch: condensed;
+}
+@font-face {
+	font-family: 'Halibut';
+	src: url('fonts/HalibutSerif-Expanded.woff');
+	font-weight: normal;
+	font-stretch: expanded;
+}
+html {
+	font-size: 100%;
+	font-family: Halibut;
+	line-height: 1.4;
+}
+body {
+	color: #fff;
+	margin: 0;
+	background: linear-gradient(#effa, #444e 100vh, #111 200vh), linear-gradient(90deg, aqua, yellow);
+	min-height: 200vh;
+}
+
+header {
+	background: cyan;
+	min-height: calc(40vh + 2em);
+}
+h1 {
+	font-weight: 200;
+	font-stretch: condensed;
+	font-size: 9rem;
+	padding: 1rem 2rem;
+}
+
+.menuBar {
+	position: fixed;
+	width: 100%;
+	top: 40vh;
+}
+nav ul {
+	font-stretch: condensed;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+	background: cyan;
+	min-height: 2em;
+	padding-bottom: .2em;
+}
+.menuBar ul {
+	clip-path: inset(78% 0 0 0);
+	transition: clip-path 400ms cubic-bezier(.69,.14,.12,.99);
+}
+.menuBar:hover ul, .menuBar:focus-within ul, .keepOpen ul {
+	clip-path: inset(0 0 0 0);
+}
+
+main {
+	padding: 2rem;
+}
