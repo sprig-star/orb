@@ -42,7 +42,7 @@ header {
 	background: cyan;
 	min-height: 40vh;
 	transition: var(--background-transition);
-	border-bottom: 1px solid aqua;
+	border-top: 1px solid transparent;
 	box-sizing: content-box;
 }
 h1 {
@@ -63,7 +63,7 @@ nav ul {
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
-	background: blue;
+	background: cyan;
 }
 .menuBar li {
 	flex: 1 0 auto;

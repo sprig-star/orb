@@ -25,13 +25,18 @@ const menuIntersection = () => {
 
 	const menuBar = document.querySelector('.menuBar');
 	let currentHeight = window.innerHeight;
+	let newLoad = true;
 
 	const animation = (entries, observer) => {
-		entries.forEach(entry => {
-			console.log('isIntersecting:', entry.isIntersecting);
-			if (entry.isIntersecting) {requestAnimationFrame(() => menuBar.classList.remove('keepOpen'))}
-			else {requestAnimationFrame(() => menuBar.classList.add('keepOpen'))}
-		})
+		const entry = entries[0];
+		if (newLoad) {
+			requestAnimationFrame(() => menuBar.classList.add('instant'));
+			setTimeout(() => requestAnimationFrame(() => menuBar.classList.remove('instant')), 400);
+			newLoad = false;
+		}
+		console.log('isIntersecting:', entry.isIntersecting);
+		if (entry.isIntersecting) {requestAnimationFrame(() => menuBar.classList.remove('keepOpen'))}
+		else {requestAnimationFrame(() => menuBar.classList.add('keepOpen'))};
 	}
 
 	let observer;
