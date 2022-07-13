@@ -42,6 +42,8 @@ header {
 	background: cyan;
 	min-height: 40vh;
 	transition: var(--background-transition);
+	border-bottom: 1px solid aqua;
+	box-sizing: content-box;
 }
 h1 {
 	font-weight: 200;

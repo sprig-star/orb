@@ -49,15 +49,20 @@ const menuIntersection = () => {
 
 	setUpObserver();
 
-	// recalculate observer when window size changes
-	window.addEventListener('resize', () =>
-		requestAnimationFrame(() => {
-			if (window.innerHeight !== currentHeight){
-				currentHeight = window.innerHeight;
-				setUpObserver(observer);
-			}
-		})
-	);
+	// recalculate observer when window size changes, once per second
+	let enableCall = true;
+	window.addEventListener('resize', () => {
+		if (enableCall) {
+			enableCall = false;
+			requestAnimationFrame(() => {
+				if (window.innerHeight !== currentHeight) {
+					currentHeight = window.innerHeight;
+					setUpObserver(observer);
+				}
+			})
+			setTimeout(() => enableCall = true, 1000);
+		}
+	});
 }
 
 const colorCoding = () => {
