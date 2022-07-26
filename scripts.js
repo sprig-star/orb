@@ -22,7 +22,7 @@ const menuManager = () => {
 
 const menuIntersection = () => {
 	// tests whether the menuBar is at its static (below 40vh) or sticky (at 40vh) position
-
+	
 	const menuBar = document.querySelector('.menuBar');
 	let currentHeight = window.innerHeight;
 	let newLoad = true;
